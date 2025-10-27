@@ -67,14 +67,20 @@
     <div class="abstract-section">
         <h2 class="abstract-title">Abstract</h2>
         <div class="abstract-content">
-            <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. 
-                However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. 
-                To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences. 
-                Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. 
-                To tackle this, we propose a <strong>flow-guided masked attention</strong> alignment method that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. 
-                Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. 
-                We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method.
-                Experiments show our method outperforms state-of-the-art ones. Code and data will be available at <a href="https://zhang-shuohao.github.io/" target="_blank">https://zhang-shuohao.github.io/</a></p>
+            <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences.</p>
+            
+            <p>Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. To tackle this, we propose a <strong>flow-guided masked attention</strong> that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method.</p>
+            
+            <p>Experiments show our method outperforms state-of-the-art ones. Code and datasets are available at <a href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank">https://github.com/zhang-shuohao/DeAltHDR</a></p>
+        </div>
+    </div>
+
+    <!-- DeAltHDR Overview Section -->
+    <div class="overview-section">
+        <h2 class="overview-title">DeAltHDR Overview</h2>
+        <div class="overview-content">
+            <img src="/images/projects/DeAltHDR_Overview.jpg" alt="DeAltHDR Overview" class="overview-image">
+            <p class="overview-caption">Comparison with HDR-Flow, which is a representative state-of-the-art method that balances performance and efficiency. Our DeAltHDR outperforms it while the inference cost can be adjusted.</p>
         </div>
     </div>
 
