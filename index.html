@@ -6,12 +6,13 @@
     <title>DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</title>
     <link rel="icon" href="/images/profile/video-camera_10764003.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Main Title Section -->
     <div class="header-section">
         <h1 class="main-title">DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</h1>
-        <!-- <p class="highlight-badge">ICLR 2026</p> -->
+        <p class="highlight-badge">ICLR 2026</p>
         
         <!-- Authors Section -->
         <div class="authors-section">
@@ -79,7 +80,7 @@
     <div class="overview-section">
         <h2 class="overview-title">DeAltHDR Overview</h2>
         <div class="overview-content">
-            <img src="/images/projects/DeAltHDR_Overview.jpg" alt="DeAltHDR Overview" class="overview-image">
+            <canvas id="dealthdrChart" class="overview-chart"></canvas>
             <p class="overview-caption">Comparison with HDR-Flow, which is a representative state-of-the-art method that balances performance and efficiency. Our DeAltHDR outperforms it while the inference cost can be adjusted.</p>
         </div>
     </div>
@@ -157,5 +158,176 @@
             </p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('dealthdrChart').getContext('2d');
+
+            // DeAltHDR 数据点
+            const dealthdrData = [
+                {x: 98, y: 32.42},
+                {x: 102, y: 32.43},
+                {x: 106, y: 32.46},
+                {x: 109, y: 32.48},
+                {x: 113, y: 32.49},
+                {x: 116, y: 32.49},
+                {x: 120, y: 32.52},
+                {x: 125, y: 32.55},
+                {x: 130, y: 32.57},
+                {x: 138, y: 32.59},
+                {x: 142, y: 32.60},
+                {x: 150, y: 32.60},
+                {x: 155, y: 32.62},
+                {x: 160, y: 32.63},
+                {x: 168, y: 32.65}
+            ];
+
+            // HDRFlow 数据点
+            const hdrflowData = [
+                {x: 116, y: 32.26}
+            ];
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'DeAltHDR',
+                        data: dealthdrData,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        pointBackgroundColor: '#3498db',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#3498db',
+                        pointBorderWidth: 2,
+                        borderWidth: 2.5,
+                        pointRadius: 5,
+                        pointHoverRadius: 8,
+                        fill: false,
+                        tension: 0.3
+                    }, {
+                        label: 'HDRFlow',
+                        data: hdrflowData,
+                        borderColor: '#95a5a6',
+                        backgroundColor: '#95a5a6',
+                        pointBackgroundColor: '#95a5a6',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#95a5a6',
+                        pointBorderWidth: 2,
+                        borderWidth: 0,
+                        pointRadius: 8,
+                        pointHoverRadius: 10,
+                        fill: false,
+                        showLine: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                usePointStyle: true,
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            },
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].dataset.label;
+                                },
+                                label: function(context) {
+                                    return `FLOPS(G): ${context.parsed.x.toFixed(0)}`;
+                                },
+                                afterLabel: function(context) {
+                                    return `PSNR(dB): ${context.parsed.y.toFixed(2)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            position: 'bottom',
+                            title: {
+                                display: true,
+                                text: 'FLOPS(G)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                color: '#2c3e50',
+                                padding: 10
+                            },
+                            min: 90,
+                            max: 175,
+                            ticks: {
+                                stepSize: 10,
+                                color: '#555',
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.08)',
+                                drawBorder: true,
+                                borderColor: '#ddd'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'PSNR(dB)',
+                                font: {
+                                    size: 14,
+                                    weight: 'bold'
+                                },
+                                color: '#2c3e50',
+                                padding: 10
+                            },
+                            min: 32.20,
+                            max: 32.70,
+                            ticks: {
+                                stepSize: 0.05,
+                                color: '#555',
+                                font: {
+                                    size: 12
+                                },
+                                callback: function(value) {
+                                    return value.toFixed(2);
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.08)',
+                                drawBorder: true,
+                                borderColor: '#ddd'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
