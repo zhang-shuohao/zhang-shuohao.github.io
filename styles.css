@@ -207,8 +207,20 @@ body {
     margin-bottom: 30px;
     text-align: center;
     font-weight: 700;
-    border-bottom: 3px solid #3498db;
     padding-bottom: 15px;
+    position: relative;
+}
+
+.overview-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    max-width: 90%;
+    height: 3px;
+    background-color: #3498db;
 }
 
 .overview-content {
@@ -254,6 +266,57 @@ body {
 .overview-caption .method-link:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+/* Method Overview Section */
+.method-overview-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.method-overview-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.method-overview-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    max-width: 90%;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.method-overview-content {
+    text-align: center;
+}
+
+.method-overview-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+.method-overview-caption {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Comparison Section */
@@ -467,6 +530,21 @@ h2 {
     }
     
     .overview-caption {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .method-overview-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .method-overview-title {
+        font-size: 1.6rem;
+        padding-bottom: 12px;
+    }
+    
+    .method-overview-caption {
         font-size: 1rem;
         text-align: left;
     }
