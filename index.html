@@ -21,12 +21,9 @@
                 <a href="https://openreview.net/profile?id=~RongJian_Xu1" class="author-link" target="_blank">Rongjian Xu</a><sup>¹</sup>,
                 <a href="https://scholar.google.com.hk/citations?user=SluULSIAAAAJ&hl=zh-CN" class="author-link" target="_blank">Xiaohe Wu</a><sup>¹</sup>,
                 <a href="https://scholar.google.com/citations?user=rUOpCEYAAAAJ&hl=en" class="author-link" target="_blank">Wangmeng Zuo</a><sup>¹</sup>
-                <!-- <span class="author-name">Wangmeng Zuo</span><sup>¹</sup> -->
             </p>
             <div class="affiliations">
                 <p><sup>¹</sup>Harbin Institute of Technology, Harbin, China</p>
-                <!-- <p><sup>²</sup>The Chinese University of Hong Kong</p> -->
-                <!-- <p><sup>³</sup>Your Affiliation</p> -->
             </div>
         </div>
         
@@ -50,10 +47,22 @@
                 <span class="btn-icon">🤗</span>
                 Data
             </a>
-            <a href="https://zhang-shuohao.github.io/" class="nav-btn">
+            <a href="https://zhang-shuohao.github.io/" class="nav-btn" target="_blank">
                 <span class="btn-icon">🏠</span>
                 Homepage
             </a>
+        </div>
+    </div>
+
+    <!-- Abstract Section -->
+    <div class="abstract-section">
+        <h2 class="abstract-title">Abstract</h2>
+        <div class="abstract-content">
+            <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences.</p>
+            
+            <p>Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. To tackle this, we propose a <strong>flow-guided masked attention</strong> that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method.</p>
+            
+            <p>Experiments show our method outperforms state-of-the-art ones. Code and datasets are available at <a href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank">https://github.com/zhang-shuohao/DeAltHDR</a></p>
         </div>
     </div>
 
@@ -110,7 +119,7 @@
 
         <h2>Featured Research</h2>
         <div class="demo-section">
-            <img src="/images/research/ultrafusion_demo.jpg" alt="UltraFusion Research" class="demo-image">
+            <img src="/images/research/ultrafusion_demo.jpg" alt="Ultraol Research" class="demo-image">
             <p class="caption"><em>Ultra High Dynamic Range Imaging using Exposure Fusion</em></p>
         </div>
 
@@ -125,8 +134,8 @@
         <div class="contact-section">
             <p><strong>I am open to collaborations and discussions on computational imaging and AI vision.</strong></p>
             <p>
-                <a href="yhyzshrby@163.com">Email: yhyzshrby@163.com</a> | 
-                <a href="https://github.com/zhang-shuohao/DeAltHDR">GitHub</a>
+                <a href="mailto:yhyzshrby@163.com">Email: yhyzshrby@163.com</a> | 
+                <a href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank">GitHub</a>
             </p>
         </div>
     </div>
