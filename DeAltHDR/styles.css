@@ -1,0 +1,582 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+}
+
+/* Header Section */
+.header-section {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.highlight-badge {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Authors Section */
+.authors-section {
+    margin: 30px 0 40px;
+}
+
+.authors {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.author-link {
+    color: #0366d6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.author-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.author-name {
+    color: #2c3e50;
+}
+
+.authors sup {
+    font-size: 0.85em;
+    vertical-align: super;
+}
+
+.affiliations {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.affiliations p {
+    margin: 5px 0;
+}
+
+.affiliations sup {
+    font-size: 0.85em;
+    vertical-align: super;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-icon {
+    font-size: 1.1em;
+}
+
+.github-icon {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.arxiv-icon {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+}
+
+.data-icon {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+/* Abstract Section */
+.abstract-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.abstract-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+.abstract-content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    line-height: 1.8;
+}
+
+.abstract-content p {
+    font-size: 1.05rem;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 18px;
+    text-indent: 0;
+}
+
+.abstract-content p:last-child {
+    margin-bottom: 0;
+}
+
+.abstract-content strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.abstract-content a {
+    color: #0366d6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.abstract-content a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* DeAltHDR Overview Section */
+.overview-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.overview-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.overview-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    max-width: 90%;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.overview-content {
+    text-align: center;
+}
+
+.overview-image {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.overview-chart {
+    max-width: 700px;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+}
+
+.overview-caption {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.overview-caption .method-link {
+    color: #0366d6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.overview-caption .method-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Method Overview Section */
+.method-overview-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.method-overview-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.method-overview-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    max-width: 90%;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.method-overview-content {
+    text-align: center;
+}
+
+.method-overview-image {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+.method-overview-caption {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Comparison Section */
+.comparison-section {
+    max-width: 1600px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.comparison-block {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 15px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.input-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-image,
+.output-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #000;
+}
+
+.input-image img,
+.output-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    z-index: 10;
+}
+
+.output-image {
+    grid-row: 1 / 3;
+}
+
+.zoom-box {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 80px;
+    border: 2px solid white;
+    pointer-events: none;
+}
+
+/* Content Section */
+.content-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.content-section p {
+    font-size: 1rem;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.demo-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.demo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.demo-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+.contact-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+.contact-section p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.contact-section a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .comparison-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-block {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .main-title {
+        font-size: 1.8rem;
+    }
+    
+    .highlight-badge {
+        font-size: 1rem;
+    }
+    
+    .authors {
+        font-size: 0.95rem;
+    }
+    
+    .nav-buttons {
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .abstract-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .abstract-title {
+        font-size: 1.6rem;
+        padding-bottom: 12px;
+    }
+    
+    .abstract-content {
+        padding: 20px 25px;
+        line-height: 1.7;
+    }
+    
+    .abstract-content p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .overview-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .overview-title {
+        font-size: 1.6rem;
+        padding-bottom: 12px;
+    }
+    
+    .overview-chart {
+        height: 500px;
+        padding: 15px;
+    }
+    
+    .overview-caption {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .method-overview-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .method-overview-title {
+        font-size: 1.6rem;
+        padding-bottom: 12px;
+    }
+    
+    .method-overview-caption {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .comparison-block {
+        grid-template-columns: 1fr;
+    }
+    
+    .output-image {
+        grid-row: auto;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content-section p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-icon {
+        display: none;
+    }
+}
