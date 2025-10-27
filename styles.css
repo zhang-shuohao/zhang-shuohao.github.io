@@ -133,6 +133,14 @@ body {
     stroke: currentColor;
 }
 
+.data-icon {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
 /* Abstract Section */
 .abstract-section {
     max-width: 1000px;
