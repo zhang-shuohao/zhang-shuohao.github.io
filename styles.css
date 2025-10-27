@@ -116,6 +116,14 @@ body {
     font-size: 1.1em;
 }
 
+.github-icon {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
 /* Comparison Section */
 .comparison-section {
     max-width: 1600px;
@@ -322,3 +330,4 @@ h2 {
         display: none;
     }
 }
+
