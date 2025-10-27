@@ -40,9 +40,8 @@
                 Code
             </a>
             <a href="#" class="nav-btn">
-                <svg class="btn-icon arxiv-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.29l8 4v8.71c0 4.46-3.08 8.68-7.25 9.85C8.08 23.68 5 19.46 5 15V8.29l7-3.5z"/>
-                    <path d="M7 11h10v2H7zm0-4h10v2H7zm0 8h7v2H7z"/>
+                <svg class="btn-icon arxiv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6l12 12"/>
                 </svg>
                 Arxiv
             </a>
@@ -64,7 +63,7 @@
             <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. 
                 However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. 
                 To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences. 
-                Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment.
+                Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. 
                 To tackle this, we propose a <strong>flow-guided masked attention</strong> alignment method that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. 
                 Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. 
                 We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method. 
