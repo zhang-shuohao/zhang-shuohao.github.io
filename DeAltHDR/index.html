@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</title>
-    <link rel="icon" href="/images/profile/video-camera_10764003.png" type="image/png">
+    <link rel="icon" href="../images/profile/video-camera_10764003.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -57,7 +57,7 @@
                 </svg>
                 Data
             </a>
-            <a href="https://zhang-shuohao.github.io/" class="nav-btn" target="_blank">
+            <a href="https://zhang-shuohao.github.io/DeAltHDR/" class="nav-btn" target="_blank">
                 <span class="btn-icon">🏠</span>
                 Homepage
             </a>
@@ -68,11 +68,14 @@
     <div class="abstract-section">
         <h2 class="abstract-title">Abstract</h2>
         <div class="abstract-content">
-            <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences.</p>
-            
-            <p>Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. To tackle this, we propose a <strong>flow-guided masked attention</strong> that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method.</p>
-            
-            <p>Experiments show our method outperforms state-of-the-art ones. Code and datasets are available at <a href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank">https://github.com/zhang-shuohao/DeAltHDR</a></p>
+            <p>High dynamic range (HDR) video can be reconstructed from low dynamic range (LDR) sequences with alternating exposures. 
+                However, most existing methods overlook the degradations (e.g., noise and blur) in LDR frames, focusing only on the brightness and position differences between them. 
+                To address this gap, we propose <strong>DeAltHDR</strong>, a novel framework for high-quality HDR video reconstruction from degraded sequences. 
+                Our framework addresses two key challenges. First, noisy and blurry contents complicate inter-frame alignment. 
+                To tackle this, we propose a <strong>flow-guided masked attention</strong> alignment method that leverages optical flow for a dynamic sparse cross-attention computation, achieving superior performance while maintaining efficiency. 
+                Notably, its controllable attention ratio allows for adaptive inference costs. Second, the lack of real-world paired data hinders practical deployment. 
+                We overcome this with a <strong>two-stage training paradigm</strong>: the model is first pre-trained on our newly introduced synthetic paired dataset and subsequently fine-tuned on unlabeled real-world videos via a proposed self-supervised method. 
+                Experiments show our method outperforms state-of-the-art ones. Code and datasets are available at <a href="https://github.com/zhang-shuohao/DeAltHDR" target="_blank">https://github.com/zhang-shuohao/DeAltHDR</a></p>
         </div>
     </div>
 
@@ -89,7 +92,7 @@
     <div class="method-overview-section">
         <h2 class="method-overview-title">Method Overview</h2>
         <div class="method-overview-content">
-            <img src="/images/projects/Method_Overview.png" alt="Method Overview" class="method-overview-image">
+            <img src="../images/projects/Method_Overview.png" alt="Method Overview" class="method-overview-image">
             <p class="method-overview-caption">Overview of our framework. Figure (a) illustrates the processing of the t-th frame in our DeAltHDR, where DeAltHDR uses the other 2 neighboring frames for assistance. Taking the alignment from t-1-th frame to t-th frame as an example, figure (b) shows how Flow-Guided Mask Attention Alignment (FGMA) works.</p>
         </div>
     </div>
