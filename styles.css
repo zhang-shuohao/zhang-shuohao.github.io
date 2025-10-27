@@ -194,6 +194,44 @@ body {
     text-decoration: underline;
 }
 
+/* DeAltHDR Overview Section */
+.overview-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.overview-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+.overview-content {
+    text-align: center;
+}
+
+.overview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.overview-caption {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /* Comparison Section */
 .comparison-section {
     max-width: 1600px;
@@ -387,6 +425,21 @@ h2 {
     .abstract-content p {
         font-size: 0.95rem;
         margin-bottom: 15px;
+    }
+    
+    .overview-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .overview-title {
+        font-size: 1.6rem;
+        padding-bottom: 12px;
+    }
+    
+    .overview-caption {
+        font-size: 0.95rem;
+        text-align: left;
     }
     
     .comparison-block {
