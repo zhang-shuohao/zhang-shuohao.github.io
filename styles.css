@@ -129,7 +129,8 @@ body {
     height: 1.1em;
     display: inline-block;
     vertical-align: middle;
-    fill: currentColor;
+    fill: none;
+    stroke: currentColor;
 }
 
 /* Abstract Section */
