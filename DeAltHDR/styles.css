@@ -338,13 +338,14 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .video-column {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    aspect-ratio: 16 / 9;
 }
 
 .video-card {
@@ -352,6 +353,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1 1 0;
 }
 
 .video-label {
@@ -372,8 +377,10 @@ body {
 .grid-video {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: #000;
+    flex: 1 1 auto;
+    object-fit: cover;
 }
 
 .method-video-note {
