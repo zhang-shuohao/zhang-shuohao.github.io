@@ -355,12 +355,18 @@ body {
 }
 
 .video-label {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: #356ac3;
     color: #fff;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     text-align: center;
-    padding: 8px 10px;
+    padding: 10px 12px;
+}
+
+.video-label.muted {
+    background-color: #d9e6fb;
+    color: #1b3c74;
+    font-weight: 700;
 }
 
 .grid-video {
