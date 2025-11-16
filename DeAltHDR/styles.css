@@ -319,6 +319,58 @@ body {
     margin: 0 auto;
 }
 
+/* Method Overview Videos */
+.method-video-section {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 10px;
+}
+
+.method-video-title {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0 20px;
+    font-weight: 700;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.video-label {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px 10px;
+}
+
+.grid-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #000;
+}
+
+.method-video-note {
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+    margin-top: 12px;
+}
+
 /* Comparison Section */
 .comparison-section {
     max-width: 1600px;
@@ -466,6 +518,10 @@ h2 {
     .comparison-block {
         grid-template-columns: 1fr 1.5fr;
     }
+    
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -564,6 +620,10 @@ h2 {
     .content-section p {
         font-size: 0.95rem;
     }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -580,3 +640,4 @@ h2 {
         display: none;
     }
 }
+
