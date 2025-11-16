@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</title>
-    <link rel="icon" href="../images/profile/video-camera_10764003.png" type="image/png">
+    <link rel="icon" href="/images/profile/video-camera_10764003.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -12,7 +12,7 @@
     <!-- Main Title Section -->
     <div class="header-section">
         <h1 class="main-title">DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences</h1>
-        <!-- <p class="highlight-badge">ICLR 2026</p> -->
+        <p class="highlight-badge">ICLR 2026</p>
         
         <!-- Authors Section -->
         <div class="authors-section">
@@ -89,64 +89,52 @@
     <div class="method-overview-section">
         <h2 class="method-overview-title">Method Overview</h2>
         <div class="method-overview-content">
-            <img src="../images/projects/Method_Overview.png" alt="Method Overview" class="method-overview-image">
+            <img src="/images/projects/Method_Overview.png" alt="Method Overview" class="method-overview-image">
             <p class="method-overview-caption">Overview of our framework. Figure (a) illustrates the processing of the t-th frame in our DeAltHDR, where DeAltHDR uses the other 2 neighboring frames for assistance. Taking the alignment from $t-1$-th frame to $t$-th frame as an example, figure (b) shows how Flow-Guided Mask Attention Alignment (FGMA) works.</p>
             <div class="method-video-section">
                 <h3 class="method-video-title">Representative Results and Inputs</h3>
                 <div class="video-grid">
-                    <!-- Column 1: Example 1 Inputs (Short + Long) -->
-                    <div class="video-column">
-                        <div class="video-card">
-                            <div class="video-label">视频1（short）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example1_short.jpg">
-                                <source src="../images/videos/example1_short.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="video-card">
-                            <div class="video-label muted">视频1（long）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example1_long.jpg">
-                                <source src="../images/videos/example1_long.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 1 (Short)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example1_short.jpg">
+                            <source src="/images/videos/example1_short.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <!-- Column 2: Example 1 Output -->
-                    <div class="video-column">
-                        <div class="video-card">
-                            <div class="video-label">视频1（DeAltHDR输出）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example1_ours.jpg">
-                                <source src="../images/videos/example1_ours.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 1 (Long)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example1_long.jpg">
+                            <source src="/images/videos/example1_long.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <!-- Column 3: Example 2 Inputs (Short + Long) -->
-                    <div class="video-column">
-                        <div class="video-card">
-                            <div class="video-label">视频2（short）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example2_short.jpg">
-                                <source src="../images/videos/example2_short.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <div class="video-card">
-                            <div class="video-label muted">视频2（long）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example2_long.jpg">
-                                <source src="../images/videos/example2_long.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 1 (DeAltHDR Output)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example1_ours.jpg">
+                            <source src="/images/videos/example1_ours.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <!-- Column 4: Example 2 Output -->
-                    <div class="video-column">
-                        <div class="video-card">
-                            <div class="video-label">视频2（DeAltHDR输出）</div>
-                            <video class="grid-video" controls preload="metadata" poster="../images/videos/posters/example2_ours.jpg">
-                                <source src="../images/videos/example2_ours.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 2 (Short)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example2_short.jpg">
+                            <source src="/images/videos/example2_short.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 2 (Long)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example2_long.jpg">
+                            <source src="/images/videos/example2_long.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-label">Video 2 (DeAltHDR Output)</div>
+                        <video class="grid-video" controls preload="metadata" poster="/images/videos/posters/example2_ours.jpg">
+                            <source src="/images/videos/example2_ours.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
                 <p class="method-video-note">Each row shows a short/long exposure input pair and the reconstructed HDR result from DeAltHDR.</p>
