@@ -336,7 +336,7 @@ body {
 
 .video-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr;
+    grid-template-columns: 25% 50% 25% 50%;
     gap: 18px;
     align-items: stretch;
 }
@@ -539,7 +539,7 @@ h2 {
     }
     
     .video-grid {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 33% 67%;
     }
 }
 
