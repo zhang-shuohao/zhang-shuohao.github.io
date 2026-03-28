@@ -342,7 +342,7 @@ body {
 
 .video-grid {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     align-items: stretch;
 }
@@ -647,10 +647,6 @@ h2 {
     .comparison-block {
         grid-template-columns: 1fr 1.5fr;
     }
-    
-    .video-grid {
-        grid-template-columns: 100%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -787,7 +783,7 @@ h2 {
     }
     
     .video-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
