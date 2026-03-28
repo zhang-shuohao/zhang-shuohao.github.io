@@ -29,10 +29,16 @@ body {
 }
 
 .highlight-badge {
-    font-size: 1.2rem;
-    color: #2c3e50;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #3498db;
     margin-bottom: 30px;
-    font-weight: 500;
+    font-weight: 700;
+    padding: 6px 24px;
+    border-radius: 30px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.35);
 }
 
 /* Authors Section */
