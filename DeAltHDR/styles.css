@@ -752,6 +752,10 @@ body {
     border-radius: 8px;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
     display: block;
+    transform-origin: center center;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .lightbox-caption {
@@ -761,6 +765,21 @@ body {
     text-align: center;
     line-height: 1.6;
     max-width: 800px;
+}
+
+.lightbox-hint {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.55);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.82rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    pointer-events: none;
+    letter-spacing: 0.03em;
 }
 
 .lightbox-close {
