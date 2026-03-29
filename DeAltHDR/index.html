@@ -239,18 +239,112 @@
             </div>
 
             <script>
-                // Lightbox
+                // Lightbox with zoom & pan
                 (function () {
-                    const lightbox = document.getElementById('lightbox');
-                    const lightboxImg = document.getElementById('lightboxImg');
+                    const lightbox      = document.getElementById('lightbox');
+                    const lightboxImg   = document.getElementById('lightboxImg');
                     const lightboxCaption = document.getElementById('lightboxCaption');
                     const lightboxClose = document.getElementById('lightboxClose');
                     const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+                    const content       = lightbox.querySelector('.lightbox-content');
+
+                    const MIN_SCALE = 1, MAX_SCALE = 5, STEP = 0.3;
+                    let scale = 1, tx = 0, ty = 0;
+                    let dragging = false, startX = 0, startY = 0, lastTx = 0, lastTy = 0;
+
+                    function applyTransform(animated) {
+                        lightboxImg.style.transition = animated ? 'transform 0.2s ease' : 'none';
+                        lightboxImg.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+                        lightboxImg.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+                    }
+
+                    function resetTransform(animated) {
+                        scale = 1; tx = 0; ty = 0;
+                        applyTransform(animated);
+                    }
+
+                    function clampTranslate() {
+                        const r = lightboxImg.getBoundingClientRect();
+                        const vw = window.innerWidth, vh = window.innerHeight;
+                        const overX = Math.max(0, (r.width  - vw) / 2);
+                        const overY = Math.max(0, (r.height - vh) / 2);
+                        tx = Math.max(-overX, Math.min(overX, tx));
+                        ty = Math.max(-overY, Math.min(overY, ty));
+                    }
+
+                    // Wheel zoom — zooms toward cursor position
+                    lightboxImg.addEventListener('wheel', function (e) {
+                        e.preventDefault();
+                        const delta = e.deltaY < 0 ? STEP : -STEP;
+                        const newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale + delta));
+                        if (newScale === scale) return;
+
+                        const rect = lightboxImg.getBoundingClientRect();
+                        const ox = (e.clientX - rect.left - rect.width  / 2) / scale;
+                        const oy = (e.clientY - rect.top  - rect.height / 2) / scale;
+                        tx += ox * (scale - newScale);
+                        ty += oy * (scale - newScale);
+                        scale = newScale;
+                        clampTranslate();
+                        applyTransform(false);
+                    }, { passive: false });
+
+                    // Click to zoom in (at 1×); click to reset (when zoomed)
+                    lightboxImg.addEventListener('click', function (e) {
+                        if (dragging) return;
+                        if (scale > 1) {
+                            resetTransform(true);
+                        } else {
+                            const rect = lightboxImg.getBoundingClientRect();
+                            const ox = (e.clientX - rect.left - rect.width  / 2);
+                            const oy = (e.clientY - rect.top  - rect.height / 2);
+                            scale = 2;
+                            tx -= ox * (scale - 1) / scale;
+                            ty -= oy * (scale - 1) / scale;
+                            clampTranslate();
+                            applyTransform(true);
+                        }
+                    });
+
+                    // Drag to pan
+                    lightboxImg.addEventListener('mousedown', function (e) {
+                        if (scale <= 1) return;
+                        e.preventDefault();
+                        dragging = false;
+                        startX = e.clientX - tx;
+                        startY = e.clientY - ty;
+                        lastTx = tx; lastTy = ty;
+                        lightboxImg.style.cursor = 'grabbing';
+                        lightboxImg.style.transition = 'none';
+
+                        function onMove(ev) {
+                            const dx = ev.clientX - startX;
+                            const dy = ev.clientY - startY;
+                            if (Math.abs(dx - tx) > 2 || Math.abs(dy - ty) > 2) dragging = true;
+                            tx = dx; ty = dy;
+                            clampTranslate();
+                            lightboxImg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`;
+                        }
+                        function onUp() {
+                            lightboxImg.style.cursor = 'grab';
+                            document.removeEventListener('mousemove', onMove);
+                            document.removeEventListener('mouseup', onUp);
+                        }
+                        document.addEventListener('mousemove', onMove);
+                        document.addEventListener('mouseup', onUp);
+                    });
+
+                    // Zoom hint bar
+                    const hint = document.createElement('div');
+                    hint.className = 'lightbox-hint';
+                    hint.textContent = '滚轮缩放 · 点击放大/还原 · 拖拽平移';
+                    lightbox.querySelector('.lightbox-content').after(hint);
 
                     function openLightbox(img) {
                         lightboxImg.src = img.src;
                         lightboxImg.alt = img.alt;
                         lightboxCaption.textContent = img.dataset.caption || '';
+                        resetTransform(false);
                         lightbox.classList.add('active');
                         document.body.style.overflow = 'hidden';
                     }
@@ -258,6 +352,7 @@
                     function closeLightbox() {
                         lightbox.classList.remove('active');
                         document.body.style.overflow = '';
+                        resetTransform(false);
                     }
 
                     document.querySelectorAll('.zoomable').forEach(function (img) {
@@ -265,9 +360,21 @@
                     });
 
                     lightboxClose.addEventListener('click', closeLightbox);
-                    lightboxBackdrop.addEventListener('click', closeLightbox);
+                    lightboxBackdrop.addEventListener('click', function (e) {
+                        if (e.target === lightboxBackdrop) closeLightbox();
+                    });
                     document.addEventListener('keydown', function (e) {
+                        if (!lightbox.classList.contains('active')) return;
                         if (e.key === 'Escape') closeLightbox();
+                        if (e.key === '+' || e.key === '=') {
+                            scale = Math.min(MAX_SCALE, scale + STEP);
+                            clampTranslate(); applyTransform(true);
+                        }
+                        if (e.key === '-') {
+                            scale = Math.max(MIN_SCALE, scale - STEP);
+                            clampTranslate(); applyTransform(true);
+                        }
+                        if (e.key === '0') resetTransform(true);
                     });
                 })();
             </script>
